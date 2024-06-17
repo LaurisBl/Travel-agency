@@ -5,6 +5,7 @@ import { buildSchema } from 'type-graphql';
 import cookieParser from 'cookie-parser';
 import { ApolloServer } from 'apollo-server-express';
 import * as asc from 'apollo-server-core'
+import { resolvers } from './resolvers';
 import { connectToDB } from './utils/mysql';
 import Context from './types/context';
 
@@ -13,6 +14,7 @@ async function bootstrap() {
 
     // build the schema
     const schema = await buildSchema({
+        resolvers,
     });
 
     log("Initializing express");
