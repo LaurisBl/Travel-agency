@@ -1,0 +1,47 @@
+{
+  "name": "travel-assistant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "debug": "nodemon ./src/index.ts",
+    "build": "tsc -p ."
+  },
+  "author": "",
+  "license": "ISC",
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ]
+  },
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "bcrypt": "^5.1.1",
+    "class-validator": "^0.14.1",
+    "config": "^3.3.11",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "fancy-log": "^2.0.0",
+    "graphql": "^15.8.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.7",
+    "nanoid": "^5.0.7",
+    "reflect-metadata": "^0.2.2",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.3.20"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/fancy-log": "^2.0.2",
+    "@types/jsonwebtoken": "^9.0.6",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
