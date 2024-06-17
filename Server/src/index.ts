@@ -5,6 +5,8 @@ import { buildSchema } from 'type-graphql';
 import cookieParser from 'cookie-parser';
 import { ApolloServer } from 'apollo-server-express';
 import * as asc from 'apollo-server-core'
+import { connectToDB } from './utils/mysql';
+import Context from './types/context';
 
 async function bootstrap() {
     log("Building schema");
@@ -27,7 +29,7 @@ async function bootstrap() {
     // create the apollo server
     const server = new ApolloServer({
         schema,
-        context: (ctx: any) => {
+        context: (ctx: Context) => {
             
 
             return ctx;
@@ -48,6 +50,11 @@ async function bootstrap() {
     app.listen({port: 9049}, () => {
         log("App is listening on http://localhost:9049/graphql");
     });
+
+    log("Connecting to DB");
+
+    // connect to db
+    await connectToDB();
 
     log("System fully initialized");
 }
